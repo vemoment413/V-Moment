@@ -36,16 +36,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // --- Nav dropdown (mobile toggle) ---
+  // --- Nav dropdown (desktop hover only, mobile links directly) ---
   const dropdowns = document.querySelectorAll('.nav-dropdown');
   dropdowns.forEach(dropdown => {
     const toggle = dropdown.querySelector('.nav-link-dropdown');
     if (!toggle) return;
     toggle.addEventListener('click', (e) => {
-      if (window.innerWidth <= 768) {
+      if (window.innerWidth > 768) {
         e.preventDefault();
         dropdown.classList.toggle('active');
       }
+      // Mobile: let the link navigate normally
     });
   });
 

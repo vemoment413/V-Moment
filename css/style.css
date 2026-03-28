@@ -432,6 +432,10 @@ img {
 /* ========================================
    Section Common
    ======================================== */
+.mobile-br {
+  display: none;
+}
+
 .section {
   padding: 100px 0;
 }
@@ -1569,15 +1573,18 @@ img {
     left: 0;
     width: 100%;
     flex-direction: column;
+    align-items: center;
     background-color: rgba(250, 247, 242, 0.98);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    padding: 24px;
-    gap: 4px;
+    padding: 20px 24px;
+    gap: 0;
     transform: translateY(-120%);
     opacity: 0;
     transition: all 0.4s ease;
     box-shadow: var(--shadow-md);
+    max-height: 85vh;
+    overflow-y: auto;
   }
 
   .nav-menu.active {
@@ -1585,40 +1592,27 @@ img {
     opacity: 1;
   }
 
+  .nav-menu > li {
+    width: 100%;
+    text-align: center;
+  }
+
   .nav-link {
-    padding: 12px 16px;
+    padding: 10px 16px;
     font-size: 1rem;
   }
 
-  /* Mobile dropdown */
+  /* Mobile: hide dropdown submenu, just link to knowledge page */
   .dropdown-menu {
-    position: static;
-    transform: none;
-    opacity: 1;
-    visibility: visible;
-    box-shadow: none;
-    border: none;
-    background-color: transparent;
-    backdrop-filter: none;
-    padding: 0 0 0 16px;
-    min-width: auto;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
+    display: none;
   }
 
-  .nav-dropdown.active .dropdown-menu {
-    max-height: 300px;
+  .dropdown-arrow {
+    display: none;
   }
 
-  .dropdown-menu li a {
-    padding: 8px 16px;
-    font-size: 0.9rem;
-  }
-
-  /* Mobile dropdown - expand for more items */
-  .nav-dropdown.active .dropdown-menu {
-    max-height: 600px;
+  .nav-link-dropdown {
+    pointer-events: auto;
   }
 
   /* Carousel mobile */
@@ -1785,6 +1779,10 @@ img {
     font-size: 1.4rem;
   }
 
+  .mobile-br {
+    display: inline;
+  }
+
   .section-desc {
     font-size: 0.88rem;
   }
@@ -1824,8 +1822,9 @@ img {
   .story-grid + .story-block,
   .story-grid + .story-grid,
   .story-block + .story-grid,
-  .story-block + .story-closing {
-    margin-top: 40px;
+  .story-block + .story-closing,
+  .story-grid-reverse + .story-closing {
+    margin-top: 48px;
   }
 
   .story-text h3 {
