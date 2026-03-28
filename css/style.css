@@ -1026,7 +1026,7 @@ img {
    ======================================== */
 .cta-banner {
   background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
-  padding: 80px 0;
+  padding: 100px 0;
   text-align: center;
 }
 
@@ -1282,7 +1282,7 @@ img {
 }
 
 .knowledge-section {
-  padding: 80px 0;
+  padding: 100px 0;
 }
 
 .knowledge-alt {
@@ -1800,8 +1800,25 @@ img {
   }
 
   .story-image {
-    max-width: 220px;
+    max-width: 100%;
     margin: 0 auto;
+  }
+
+  .story-grid .story-image {
+    max-width: 45%;
+  }
+
+  .story-grid .story-image::after {
+    top: 10px;
+    left: 10px;
+  }
+
+  .story-grid-reverse .story-image {
+    max-width: 100%;
+  }
+
+  .story-grid-reverse .story-image::after {
+    display: none;
   }
 
   .story-grid + .story-block,
@@ -1814,6 +1831,7 @@ img {
   .story-text h3 {
     font-size: 1.2rem;
     margin-bottom: 10px;
+    text-align: center;
   }
 
   .story-text p {
@@ -1997,7 +2015,7 @@ img {
   }
 
   .story-image {
-    max-width: 180px;
+    max-width: 100%;
   }
 
   .knowledge-visual {
